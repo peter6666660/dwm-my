@@ -29,6 +29,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+  // 最下层
+	{ "st",       NULL,       "ncmpcpp",  0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -62,6 +64,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *mut[]  = { "amixer", "set" ,"Master", "mute", NULL };
 static const char *audiolower[]  = { "amixer", "set", "Master", "5%-", "unmute", NULL };
 static const char *audioraise[]  = { "amixer", "set" ,"Master" ,"5%+" ,"unmute", NULL };
+static const char *statuscmd[] = { "polybar", "example", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
