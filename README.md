@@ -65,3 +65,6 @@ and (re)compiling the source code.
         [SchemeSel]  = { col_sel_fg, col_sel_bg,  col_sel_bg  },
 
     ```
+
+5.  dwm-fullgaps-6.4.diff
+    - 给窗口增加间距
