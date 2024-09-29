@@ -1,15 +1,13 @@
-dwm - dynamic window manager
-============================
+# dwm - dynamic window manager
+
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+## Requirements
 
-Requirements
-------------
 In order to build dwm you need the Xlib header files.
 
+## Installation
 
-Installation
-------------
 Edit config.mk to match your local setup (dwm is installed into
 the /usr/local namespace by default).
 
@@ -18,9 +16,8 @@ necessary as root):
 
     make clean install
 
+## Running dwm
 
-Running dwm
------------
 Add the following line to your .xinitrc to start dwm using startx:
 
     exec dwm
@@ -41,16 +38,30 @@ like this in your .xinitrc:
     done &
     exec dwm
 
+## Configuration
 
-Configuration
--------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
 
+## Patches
 
-Patches
--------------
-1. [autostart](https://dwm.suckless.org/patches/autostart/)
-	* https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff  
+1.  [autostart](https://dwm.suckless.org/patches/autostart/)
 
+    - https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff
 
+2.  dwm-statuscmd-20210405-67d76bd.diff
+
+    - 支持状态栏信号控制
+
+3.  dwm-alpha-20230401-348f655.diff
+
+    - 状态栏支持透明
+
+4.  修改状态栏选中色
+
+    ```c
+        static const char col_sel_bg[] = "#6C71C4";
+        static const char col_sel_fg[] = "#ECEFF4";
+        [SchemeSel]  = { col_sel_fg, col_sel_bg,  col_sel_bg  },
+
+    ```
