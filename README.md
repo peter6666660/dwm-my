@@ -107,20 +107,24 @@ dwm/
 ### 文件说明
 
 1. **核心源文件**
+
    - `dwm.c`: DWM 的核心实现，包含窗口管理、事件处理等主要功能
    - `drw.c/h`: 处理所有绘图相关的操作，如状态栏、标题等的渲染
    - `util.c/h`: 提供各种辅助函数，如字符串处理、内存管理等
 
 2. **配置文件**
+
    - `config.def.h`: 默认配置模板，包含快捷键、外观等设置
    - `config.h`: 用户的个性化配置，基于 config.def.h 修改
    - `config.mk`: 定义编译选项、安装路径等构建系统配置
 
 3. **补丁文件**
+
    - 包含多个功能增强补丁，每个补丁都提供特定的功能扩展
    - 补丁通过 patch 命令应用到源代码中
 
 4. **编译文件**
+
    - `Makefile`: 定义构建规则和安装步骤
    - `.o` 文件: 编译生成的目标文件
 
@@ -140,6 +144,7 @@ dwm/
 `config.def.h` 中的一些变量和类型依赖于 `dwm.c` 中的定义：
 
 1. **来自 dwm.c 的常量定义**
+
    ```c
    #define OPAQUE                  0xffU    // 完全不透明
    #define LENGTH(X)               (sizeof X / sizeof X[0])
@@ -147,6 +152,7 @@ dwm/
    ```
 
 2. **来自 dwm.c 的枚举定义**
+
    ```c
    enum { SchemeNorm, SchemeSel };    // 颜色主题枚举
    enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
@@ -157,6 +163,7 @@ dwm/
    ```
 
 3. **来自 dwm.c 的结构体定义**
+
    ```c
    typedef union {
        int i;
@@ -195,3 +202,7 @@ dwm/
 1. 修改配置时，建议同时参考 `dwm.c` 中的相关定义
 2. 如果遇到"未定义标识符"的警告，可以查看上述依赖说明
 3. 实际编译时这些警告可以忽略，因为在完整编译过程中所有依赖都会被正确解析
+
+### patch
+
+- dwm-hide_vacant_tags-6.4.diff
