@@ -13,10 +13,10 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_sel_bg[]      = "#6C71C4";
+static const char col_sel_bg[]      = "#800080"; // "#6C71C4";
 static const char col_sel_fg[]      = "#ECEFF4";
 
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 0xff; // 修改透明度值，0x00 是完全透明，0xff 是完全不透明
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -80,6 +80,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Delete, spawn,           SHCMD("bash ~/.config/rofi/power_menu.sh") },
   // 静音切换
 	{ 0,      	  XF86XK_AudioMute,   	   spawn,          SHCMD("bash ~/.config/dwm/scripts/volume_control.sh toggle")},
   // 减少音量
