@@ -206,3 +206,22 @@ dwm/
 ### patch
 
 - dwm-hide_vacant_tags-6.4.diff
+
+### 自动挂载USB
+
+```
+sudo pacman -S udisks2 udiskie dunst
+
+udisks2：提供底层磁盘管理支持。
+udiskie：基于 udisks2 的自动挂载工具，支持自动挂载和通知。
+dunst：轻量级通知守护进程，用于显示挂载提示
+```
+
+> nvim ~/.xinitrc
+> 确保在启动 dwm 之前启动 dunst 和 udiskie
+
+```
+dunst &
+udiskie --tray --notify &
+exec dwm
+```
